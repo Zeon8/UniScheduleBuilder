@@ -1,0 +1,43 @@
+﻿@page
+@model UniScheduleWeb.Pages.Classes.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Деталі</h1>
+
+<div>
+    <h4>ClassModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ClassModel.Discipline)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ClassModel.Discipline.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ClassModel.Classroom)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ClassModel.Classroom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ClassModel.ClassNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ClassModel.ClassNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ClassModel.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ClassModel.Date)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ClassModel.Id">Редагувати</a> |
+    <a asp-page="./Index">Назад до списку</a>
+</div>

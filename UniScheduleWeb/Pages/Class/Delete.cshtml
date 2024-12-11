@@ -1,0 +1,52 @@
+﻿@page
+@model UniScheduleWeb.Pages.Classes.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Видилити</h1>
+
+<h3>Ви впевнені, що хочете це видалити?</h3>
+<div>
+    <h4>ClassModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ClassModel.Discipline!.Name)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ClassModel.Discipline!.Type)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ClassModel.Discipline!.Group)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ClassModel.Discipline!.SubGroup)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ClassModel.Classroom)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ClassModel.Classroom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ClassModel.ClassNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ClassModel.ClassNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ClassModel.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ClassModel.Date)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="ClassModel.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger mt-1" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

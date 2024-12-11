@@ -1,0 +1,59 @@
+﻿@page
+@model UniScheduleWeb.Pages.Discipline.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Створити</h1>
+
+<h4>Дисципліна</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Discipline.Name" class="control-label"></label>
+                <input asp-for="Discipline.Name" class="form-control" />
+                <span asp-validation-for="Discipline.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Discipline.Type" class="control-label"></label>
+                @* <input asp-for="Discipline.Type" class="form-control" /> *@
+                <select asp-for="Discipline.Type" class="form-control">
+                    <option selected="selected">Лекція</option>
+                    <option>Лаба</option>
+                    <option>Практ</option>
+                </select>
+                <span asp-validation-for="Discipline.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Discipline.Group" class="control-label"></label>
+                <input asp-for="Discipline.Group" class="form-control" />
+                <span asp-validation-for="Discipline.Group" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Discipline.SubGroup" class="control-label"></label>
+                <input asp-for="Discipline.SubGroup" class="form-control" />
+                <span asp-validation-for="Discipline.SubGroup" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Discipline.ClassesCount" class="control-label"></label>
+                <input asp-for="Discipline.ClassesCount" class="form-control" />
+                <span asp-validation-for="Discipline.ClassesCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary mt-1" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Назад до Списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

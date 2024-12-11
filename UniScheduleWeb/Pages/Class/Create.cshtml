@@ -1,0 +1,53 @@
+﻿@page
+@model UniScheduleWeb.Pages.Classes.CreateModel
+
+@{
+    ViewData["Title"] = "Створити";
+}
+
+<h1>Створити</h1>
+
+<h4>Пара</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ClassModel.OrdinalNumber" class="control-label"></label>
+                <input asp-for="ClassModel.OrdinalNumber" class="form-control" />
+                <span asp-validation-for="ClassModel.OrdinalNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClassModel.DisciplineId" class="control-label"></label>
+                <select asp-for="ClassModel.DisciplineId" class ="form-control" asp-items="ViewBag.DisciplineId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClassModel.Classroom" class="control-label"></label>
+                <input asp-for="ClassModel.Classroom" class="form-control" />
+                <span asp-validation-for="ClassModel.Classroom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClassModel.ClassNumber" class="control-label"></label>
+                <input asp-for="ClassModel.ClassNumber" class="form-control" />
+                <span asp-validation-for="ClassModel.ClassNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClassModel.Date" class="control-label"></label>
+                <input asp-for="ClassModel.Date" type="date" class="form-control" />
+                <span asp-validation-for="ClassModel.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Створити" class="btn btn-primary mt-1" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Назад до Списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

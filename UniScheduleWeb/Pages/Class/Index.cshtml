@@ -1,0 +1,84 @@
+﻿@page
+@model UniScheduleWeb.Pages.Classes.IndexModel
+
+@{
+    ViewData["Title"] = "Список пар";
+}
+
+<h1>Список пар</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-outline-primary">Створити нову</a>
+    <a asp-page="CreateMultiple" class="btn btn-outline-primary">Створити декілька</a>
+    <a asp-page="ShowRedundant" class="btn btn-outline-primary">Визначити невикористані пари</a>
+    <a asp-page="Export" asp-page-handler="Calendar" class="btn btn-outline-success">Завантажити календар</a>
+    <a asp-page="Export" asp-page-handler="Excel" class="btn btn-outline-success">Завантажити Excel файл</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ClassModel[0].OrdinalNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClassModel[0].Discipline!.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClassModel[0].Discipline!.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClassModel[0].Discipline!.Group)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClassModel[0].Discipline!.SubGroup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClassModel[0].Classroom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClassModel[0].ClassNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClassModel[0].Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ClassModel)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrdinalNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Discipline!.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Discipline!.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Discipline!.Group)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Discipline!.SubGroup)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Classroom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClassNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Редагувати</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Деталі</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Видалити</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

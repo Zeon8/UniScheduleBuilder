@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniScheduleBuilder", "UniScheduleBuilder\UniScheduleBuilder.csproj", "{7DC15600-4FB6-4F03-9D85-29CB5EA750E2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniScheduleWeb", "UniScheduleWeb\UniScheduleWeb.csproj", "{5A244F78-C9F2-4C04-8990-DB7B9FA77380}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DC15600-4FB6-4F03-9D85-29CB5EA750E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DC15600-4FB6-4F03-9D85-29CB5EA750E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DC15600-4FB6-4F03-9D85-29CB5EA750E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DC15600-4FB6-4F03-9D85-29CB5EA750E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A244F78-C9F2-4C04-8990-DB7B9FA77380}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A244F78-C9F2-4C04-8990-DB7B9FA77380}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A244F78-C9F2-4C04-8990-DB7B9FA77380}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A244F78-C9F2-4C04-8990-DB7B9FA77380}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C6DBEBAA-F64C-494E-9B72-CC62B98C4210}
+	EndGlobalSection
+EndGlobal

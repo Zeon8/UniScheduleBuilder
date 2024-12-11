@@ -1,0 +1,85 @@
+﻿@page
+@model UniScheduleWeb.Pages.Classes.ShowRedundantModel
+@{
+    ViewData["Title"] = "Невикористані пари";
+}
+
+<h1>Невикористані пари</h1>
+
+<form method="get">
+    <label asp-for="EndDate" class="control-label"></label>
+    <input asp-for="EndDate" type="date" class="form-control mb-1 w-auto d-inline" />
+    <input type="submit" value="Submit" class="btn btn-primary" />
+    <span asp-validation-for="EndDate" class="text-danger"></span>
+</form>
+
+@if (Model.ClassModel is not null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClassModel[0].OrdinalNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClassModel[0].Discipline!.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClassModel[0].Discipline!.Type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClassModel[0].Discipline!.Group)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClassModel[0].Discipline!.SubGroup)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClassModel[0].Classroom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClassModel[0].ClassNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClassModel[0].Date)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ClassModel)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrdinalNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Discipline!.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Discipline!.Type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Discipline!.Group)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Discipline!.SubGroup)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Classroom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClassNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

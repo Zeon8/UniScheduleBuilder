@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "UniScheduleBuilder": {
+      "commandName": "Project",
+      "commandLineArgs": "Навантаження.csv"
+    }
+  }
+}
